@@ -1,0 +1,38 @@
+.composition {
+  position: relative; //genitore
+  &__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4 rem rgba($color-black, 0.4);
+    border-radius: 2px;
+    position: absolute; //figlio
+    z-index: 10;
+    transition: all .2s;
+    outline-offset: 2rem; //spazio quadrato verde intorno alle foto
+
+    &--p1 {
+      left: 0;
+      top: -2rem;
+    }
+
+    &--p2 {
+      right: 0;
+      top: 2rem;
+    }
+
+    &--p3 {
+      left: 20%;
+      top: 10rem;
+    }
+
+    &:hover{
+        outline:1.5rem solid $color-primary; // quadrato verde intorno alle foto
+        transform: scale(1.05) translateY(-.5rem);
+        box-shadow: 0 2.5rem 4 rem rgba($color-black, .5);
+        z-index: 20;
+    }
+  }
+
+  &:hover &__photo:not(:hover){  /* seppur non si nota molto a occhio nudo,questa funzione permette di dare piu' fluidità al'hover delle immagini*/
+      transform: scale(.95);
+  }
+}
