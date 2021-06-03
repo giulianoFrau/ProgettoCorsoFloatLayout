@@ -1,0 +1,66 @@
+
+/* siccome fanno parte del "blocco" button gli elementi posso annidarli nel seguente modo usando la &*/
+.btn {
+    &:link,
+    &:visited {
+      /* link e visited sono pseduo classi,come ad esempio quando l'utente preme il bottone accade un evento,il display inline-block serve quando diamo del padding*/
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1.5rem 4rem; /*top e left*/
+      display: inline-block;
+      border-radius: 10rem;
+      transition: all 0.2s; /* è un metodo che richiama le animazioni senza bisogno di specificare i nomi*/
+      position: relative;
+      font-size: 1.6rem;
+    }
+  
+    &:hover {
+      /*voglio che si sposti verso l'alto con l'hover del mouse*/
+      transform: translateY(-3px);
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.2); /* x y e sfocatura*/
+  
+      &::after {
+        /*aumenta le dimensioni DOPO il passaggio del mouse*/
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+      }
+    }
+  
+    &:active {
+      /*quando clicco il button voglio che si sposti verso l'alto*/
+      transform: translateY(-1px);
+      box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2); /* x y e sfocatura*/
+    }
+  
+    &--white {
+      /*interno button*/
+      background-color: $color-white;
+      color: $color-grey-dark;
+      &::after {
+        /*interno button dopo il click*/
+        background-color: $color-white;
+      }
+    }
+  
+    &::after {
+      /* fa qualcosa dopo il click del button,è un figlio del pulsante.Per lo pseudo element after bisogna sempre mettere un content,anche vuoto e il display ,
+      che deve essere sempre come il pulsante originale(in questo caso inline-block) position absolute e top e left 0 in quanto è come se ci fosse un altro pulsante dietro */
+      content: "";
+      display: inline-block; /* da qui in giu le proprietà del pulsante*/
+      height: 100%;
+      width: 100%;
+      border-radius: 10rem; 
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all 0.4s;
+    }
+  
+    &--animated {
+      /*animazioni pulsante con pseudo classi*/
+      animation: moveInBottom 0.5s ease-out 1s; /*l'ultimo è il ritardo dell'animazione*/
+      animation-fill-mode: backwards; /*fa si che il pulsante (in questo caso) non si veda finchè inizia l'animazione che in questo caso è ritardata*/
+    }
+  }
+  

@@ -1,0 +1,20 @@
+/* definiamo la riga in posizione centrale con il margin 0 aut*/
+.row{   
+    max-width: $grid-width;   
+    background-color: #eee;
+    margin: 0 auto;
+
+    &:not(:last-child){ //diamo queste regole a tutti gli elementi tranne che all'ultimo
+        margin-bottom: $gutter-vertical;
+    }
+
+    .col-1-of-2{
+        width: calc((100% - #{$gutter-horizontal})/2);  /*calcola in automatico la larghezza in modo da essere responsivo*/
+        background-color: orangered;
+        color: white;
+        float:left; //consigliabile farle partire sempre da sinistra
+        &:not(:last-child){
+            margin-right: $gutter-horizontal;//con questa tecnica si permette di dare uno spazio tra una colonna e l'altra
+        }
+    }
+}

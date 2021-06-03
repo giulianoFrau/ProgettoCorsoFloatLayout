@@ -1,0 +1,46 @@
+/* animazioni,la translate al punto 0 è x che va da sx a dx (x quello negativo)*/
+@keyframes moveInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-10rem);
+    }
+  
+    80% {
+      transform: translate(1rem);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+  
+  /* animazioni,la translate al punto 0 è x che va da dx a sx (x quello positivo)*/
+  @keyframes moveInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(10rem);
+    }
+  
+    80% {
+      transform: translate(-1rem);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+  
+  /* animazioni,la translate al punto 0 è y che va dal baso verso l'alto(x quello positivo)*/
+  @keyframes moveInBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(3rem);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }

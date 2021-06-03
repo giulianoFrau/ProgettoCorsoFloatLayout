@@ -1,0 +1,41 @@
+/*Questa parte del body riguarda la tipografia,per questo è stato diviso dal body presente nel file _base.scss*/
+
+body{
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: $color-grey-dark;
+  padding: 3rem; 
+}
+
+
+
+/* siccome fanno parte del "blocco" heading gli elementi posso annidarli nel seguente modo usando la &(vedi html x capire il "blocco heading")*/
+.heading-primary {
+    /* h1 scritte */
+    color: $color-white;
+    text-transform: uppercase;
+    backface-visibility: hidden; /*nascondere sfarfallio elementi*/
+    margin-bottom: 6rem; /* dare spazio tra i titoli e il button*/
+  
+    &--main {
+      /* 1 span con il display block per andare a capo, compresa di animazioni*/
+      display: block;
+      font-size: 6rem; 
+      font-weight: 400;
+      letter-spacing: 1rem;
+      animation-name: moveInLeft; /* elenco proprieta animazioni 1 a 1 da qui in giu*/
+      animation-duration: 1s;
+      animation-timing-function: ease-out;
+    }
+  
+    &--sub {
+      /* 2 span con il dispaly block per andare a capo, compresa di animazioni*/
+      display: block;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.75rem;
+      animation: moveInRight 1s; /* modalita abbreviata per scrivere il tempo e il nome dell animazione e altre proprietà*/
+    }
+  }
+  

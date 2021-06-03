@@ -1,0 +1,20 @@
+/* questa parte è detta global reset ,selettore universale per adattare a ogni pagina web,aggiungiamo anche gli pseudo elementi per best-practice,
+   in modo che il comportamento che hanno gli elementi reali lo abbiano anche gli pseudo elementi */
+   *,
+   *::after,
+   *::before {
+     margin: 0;  
+     padding: 0;
+     box-sizing: inherit; /*ereditarieta, best practice metterlo qui e nel body mettere il border box*/
+   }
+   
+   /*root impostato a 10 px in modo che possiamo convertire tutte le unità di misura in rem : 1rem=10px*/
+   html {
+     font-size: 62.5%; /*equivale a 10 px,in quanto di default il font è 16px,percio'faccio x(nel mio caso 10)/16*100 */
+   }
+     
+   /*carattere generale */  
+   body {
+  
+     box-sizing: border-box;
+   }   
