@@ -1,7 +1,7 @@
 /* definiamo la riga in posizione centrale con il margin 0 aut*/
 .row {
   max-width: $grid-width;
-  background-color: #eee;
+  
   margin: 0 auto;
 
   &:not(:last-child) {
@@ -10,8 +10,7 @@
   }
 
  [class^="col-"]{ // ^ -> significa: prendi tutte le classi che iniziano con "col-"
-    background-color: orangered;
-    color: white;
+ 
     float: left; //consigliabile farle partire sempre da sinistra
     &:not(:last-child) {
       margin-right: $gutter-horizontal; //con questa tecnica si permette di dare uno spazio tra una colonna e l'altra

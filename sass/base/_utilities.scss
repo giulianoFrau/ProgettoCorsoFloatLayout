@@ -1,0 +1,14 @@
+.u-center-text{ // classe utility,serve semplicemente per centrare i testi,seppur il suo figlio ha un inline block, nel genitore posso usare il text align
+text-align: center;
+}
+
+.u-margin-bottom-small{
+    margin-bottom: 2rem;
+}
+.u-margin-bottom-medium{
+    margin-bottom: 4rem;
+}
+.u-margin-bottom-big{
+    margin-bottom: 8rem;
+}
+
