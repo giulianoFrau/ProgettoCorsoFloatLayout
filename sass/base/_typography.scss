@@ -43,8 +43,8 @@ body{
     font-size: 3.5rem;
     text-transform: uppercase;
     font-weight: 700;
-    display: inline-block;
-    background-image: linear-gradient(to right, $color-primary-light,$color-primary-dark); //queste 3 proprieta sotto servono per dare un gradiente colorato al testo
+    display: inline-block; //riga 46-47-48-49 servono per dare un gradiente colorato al testo(insieme)
+    background-image: linear-gradient(to right, $color-primary-light,$color-primary-dark);
    -webkit-background-clip: text; //non è un errore
    color:transparent;
    letter-spacing: 2px;
