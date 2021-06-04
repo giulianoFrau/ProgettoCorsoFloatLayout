@@ -30,6 +30,20 @@
           $color-secondary-dark
         );
       }
+      &-2 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        );
+      }
+      &-3 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        );
+      }
     }
   }
 
@@ -48,6 +62,9 @@
     background-blend-mode: screen; // permette di combinare il gradiente sotto con le immagini,un po come fatto nello sfondo dell header (immagine di background+colore in trasparenza, provato)
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+
     &--1 {
       background-image: linear-gradient(
           to right bottom,
@@ -57,10 +74,20 @@
         url(../img/nat-5.jpg);
     }
     &--2 {
-      background-image: url(../img/nat-5.img);
+      background-image: linear-gradient(
+        to right bottom,
+        $color-primary-light,
+        $color-primary-dark
+      ),
+      url(../img/nat-6.jpg);
     }
     &--3 {
-      background-image: url(../img/nat-5.img);
+      background-image: linear-gradient(
+        to right bottom,
+        $color-tertiary-light,
+        $color-tertiary-dark
+      ),
+      url(../img/nat-7.jpg);
     }
   }
   &__heading {
@@ -86,6 +113,20 @@
         rgba($color-secondary-dark, 0.85)
       );
     }
+    &--2 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.85),
+        rgba($color-primary-dark, 0.85)
+      );
+    }
+    &--3 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-tertiary-light, 0.85),
+        rgba($color-tertiary-dark, 0.85)
+      );
+    }
   }
 
   &__details {
@@ -93,18 +134,44 @@
     ul {
       list-style: none;
       width: 80%;
-      margin: 0 auto; //centrare l'ul al centro del contenitore
+      margin: 0 auto; //centrare l'ul al centro del contenitore ,alternativa:width 100% text-align:center oppure non mettere il width
 
       li {
         text-align: center;
         font-size: 1.5rem;
-        padding:1rem;
-       
+        padding: 1rem;
 
-        &:not(:last-child){ // mette la linea di separazione e da uno spazio tra tutti i list item tranne che per l'ultimo 
+        &:not(:last-child) {
+          // mette la linea di separazione e da uno spazio tra tutti i list item tranne che per l'ultimo
           border-bottom: 1px solid $color-grey-light-2;
         }
       }
     }
+  }
+
+  /*stile carta retro*/
+
+  &__cta {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+  }
+  &__price-box {
+
+    margin-bottom: 8rem;
+    color: $color-white;
+  }
+
+  &__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 100;
   }
 }

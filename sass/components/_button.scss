@@ -41,6 +41,16 @@
         background-color: $color-white;
       }
     }
+
+    &--green {
+      /*interno button*/
+      background-color: $color-primary;
+      color: $color-white;
+      &::after {
+        /*interno button dopo il click*/
+        background-color: $color-primary;
+      }
+    }
   
     &::after {
       /* fa qualcosa dopo il click del button,è un figlio del pulsante.Per lo pseudo element after bisogna sempre mettere un content,anche vuoto e il display ,
