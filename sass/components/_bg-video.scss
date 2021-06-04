@@ -1,10 +1,17 @@
-.bg-video {  /*metto il video come sfondo di background*/
+.bg-video {
+  /*metto il video come sfondo di background*/
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-z-index: -1;
-opacity: 0.15;
+  z-index: -1;
+  opacity: 0.15;
+  overflow: hidden;
+
+  &__content {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; //fa praticamente la stessa cosa del background size cover per un oggetto,in questo caso il video
+  }
 }
-  
