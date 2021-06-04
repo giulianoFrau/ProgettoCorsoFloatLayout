@@ -1,0 +1,40 @@
+.form {
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &__input {  //campi form
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    font-family: inherit;
+    color: inherit;
+    border-radius: 2px;
+    background-color: rgba($color-white, 0.5);
+    border: none;
+    border-bottom: 3px solid transparent;
+    width: 90%;
+    display: block;
+
+    &::-webkit-input-placeholder{ //scritta placeholder
+        color:$color-grey-dark-2;
+    }
+
+    &:focus{ //quando clicco nell'input text per scrivere qualcosa
+        outline:none;
+        box-shadow: 0 1rem 2rem rgba($color-black, .1);
+        border-bottom: 3px solid $color-primary;
+    }
+
+    &:focus:invalid{ //quando il campo compilato non è valido valgono le seguenti regole
+        border-bottom: 3px solid $color-secondary-dark;
+    }
+  }
+
+  &__label { //regole label
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-left: 2rem;
+      margin-top: .7rem;
+      display: block;
+  }
+}
