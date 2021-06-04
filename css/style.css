@@ -129,6 +129,16 @@ body {
   .paragraph:not(:last-child) {
     margin-bottom: 3rem; }
 
+.bg-video {
+  /*metto il video come sfondo di background*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.15; }
+
 /* siccome fanno parte del "blocco" button gli elementi posso annidarli nel seguente modo usando la &*/
 .btn:link, .btn:visited {
   /* link e visited sono pseduo classi,come ad esempio quando l'utente preme il bottone accade un evento,il display inline-block serve quando diamo del padding*/
@@ -376,11 +386,33 @@ body {
     shape-outside: circle(50% at 50% 50%);
     -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
-    transform: translate(-3rem) skewX(12deg); }
+    transform: translate(-3rem) skewX(12deg);
+    position: relative; }
   .story__img {
-    height: 100%; }
+    height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+    backface-visibility: hidden;
+    transition: all .5s; }
   .story__text {
     transform: skewX(12deg); }
+  .story__caption {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -20%);
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all .5s;
+    backface-visibility: hidden; }
+  .story:hover .story__caption {
+    transform: translate(-50%, -50%);
+    opacity: 1; }
+  .story:hover .story__img {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(3px) brightness(80%); }
 
 /* usiamo vh per la viewport ,per essere piu responsive.Immagine di background con taglio nella parte dx, + impostazioni background img 
 è presente il position relative xk header è una classe padre,infatti logobox ha il position absolute.
@@ -402,7 +434,8 @@ siccome fanno parte del "blocco" header gli elementi posso annidarli nel seguent
     /* sempre meglio che la larghezza la gestisca il browser,l'altezza noi*/
     height: 3.5rem; }
   .header__text-box {
-    /* la posizione absolute xk relative è gia nella classe padre (header),inoltre il transform serve per centrare il blocco,il text align center serve per centrare il button*/
+    /* la posizione absolute xk relative è gia nella classe padre (header),inoltre il transform serve per centrare il blocco in altezza e larghezza al centro del 
+     contenitore,il text align center serve per centrare il button */
     position: absolute;
     left: 50%;
     top: 40%;
@@ -438,6 +471,7 @@ siccome fanno parte del "blocco" header gli elementi posso annidarli nel seguent
   .row .col-3-of-4 {
     width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
 
+/*BLOCCHI DIV SECTION*/
 .section-about {
   background-color: #f7f7f7;
   padding: 25rem 0;
@@ -459,5 +493,5 @@ siccome fanno parte del "blocco" header gli elementi posso annidarli nel seguent
   margin-top: -10rem; }
 
 .section-stories {
-  background-color: #f7f7f7;
+  position: relative;
   padding: 15rem 0; }

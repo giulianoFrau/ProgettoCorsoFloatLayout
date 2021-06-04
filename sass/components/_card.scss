@@ -1,14 +1,14 @@
 /*funzionalità*/
 
-.card {
+.card { // 3 CARDS ANIMATE fronte/retro
   perspective: 150rem; //prospettiva con alto numero di px
   -moz-perspective: 150rem; //questo serve per far funzionare bene la prospettiva su mozilla
   position: relative; //padre
   height: 52rem; //per non perdere la prospettiva l'altezza va dichiarata anche qui nel padre
-  &__side {
+  &__side { //composizione della singola card
     height: 52rem;
     transition: all.8s ease;
-    position: absolute; //per sovrapporre le card usare regole da riga 11 a riga 15
+    position: absolute; //per sovrapporre le card usare regole da riga 11 a riga 15 (se no non servivano)
     top: 0;
     left: 0;
     width: 100%;
@@ -17,7 +17,7 @@
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
 
-    &--front {
+    &--front { 
       background-color: $color-white;
     }
     &--back {

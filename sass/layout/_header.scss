@@ -1,7 +1,7 @@
 /* usiamo vh per la viewport ,per essere piu responsive.Immagine di background con taglio nella parte dx, + impostazioni background img 
 è presente il position relative xk header è una classe padre,infatti logobox ha il position absolute.
 siccome fanno parte del "blocco" header gli elementi posso annidarli nel seguente modo usando la &(vedi html x capire il "blocco header")*/
-.header {
+.header { //parte iniziale
   height: 95vh;
   background-image: linear-gradient(
       to right bottom,
@@ -28,7 +28,8 @@ siccome fanno parte del "blocco" header gli elementi posso annidarli nel seguent
   }
 
   &__text-box {
-    /* la posizione absolute xk relative è gia nella classe padre (header),inoltre il transform serve per centrare il blocco,il text align center serve per centrare il button*/
+    /* la posizione absolute xk relative è gia nella classe padre (header),inoltre il transform serve per centrare il blocco in altezza e larghezza al centro del 
+     contenitore,il text align center serve per centrare il button */
     position: absolute;
     left: 50%;
     top: 40%;

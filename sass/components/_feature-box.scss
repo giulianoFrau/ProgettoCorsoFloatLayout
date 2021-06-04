@@ -1,4 +1,4 @@
-.feature-box {
+.feature-box { //composizione 4 riquadri
   background-color: rgba($color-white, 0.8);
   font-size: 1.5rem;
   padding: 2.5rem;
@@ -6,7 +6,7 @@
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
  transition: transform .2sec;
-  &__icon {
+  &__icon {// icone riquadri
     font-size: 6rem;
     margin-bottom: 0.5rem;
     display: inline-block;
