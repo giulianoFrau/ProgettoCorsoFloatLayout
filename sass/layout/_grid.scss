@@ -1,39 +1,46 @@
 /* definiamo la riga in posizione centrale con il margin 0 aut*/
 .row {
   max-width: $grid-width;
-  
   margin: 0 auto;
 
   &:not(:last-child) {
     //diamo queste regole a tutti gli elementi tranne che all'ultimo
-    margin-bottom: $gutter-vertical;
+      margin-bottom: $gutter-vertical;
+  }
+  
+  @include clearfix;
+
+  [class^="col-"] { // ^ -> significa: prendi tutte le classi che iniziano con "col-"
+      float: left; //consigliabile farle partire sempre da sinistra
+
+      &:not(:last-child) {
+          margin-right: $gutter-horizontal;//con questa tecnica si permette di dare uno spazio tra una colonna e l'altra
+      }
   }
 
- [class^="col-"]{ // ^ -> significa: prendi tutte le classi che iniziano con "col-"
- 
-    float: left; //consigliabile farle partire sempre da sinistra
-    &:not(:last-child) {
-      margin-right: $gutter-horizontal; //con questa tecnica si permette di dare uno spazio tra una colonna e l'altra
-    }
- }
-
- @include clearfix;
   .col-1-of-2 {
-    width: calc((100% - #{$gutter-horizontal}) / 2); /*calcola in automatico la larghezza in modo da essere responsivo*/
+      width: calc((100% - #{$gutter-horizontal}) / 2); /*calcola in automatico la larghezza in modo da essere responsivo*/
+      
   }
-
 
   .col-1-of-3 {
-    width: calc((100% - 2 * #{$gutter-horizontal}) / 3); /*calcola in automatico la larghezza in modo da essere responsivo*/
-    /* background-color: orangered;
-    color: white;
-    float: left; 
-    &:not(:last-child) { //per non ripetere questo codice visto che è gia presente su, possiamo ricorrere al selettore di attributi alla riga 12
-    margin-right: $gutter-horizontal; 
-    }*/
+      width: calc((100% - 2 * #{$gutter-horizontal}) / 3);/*calcola in automatico la larghezza in modo da essere responsivo*/
+  }
+
+  .col-2-of-3 {
+      width: calc(2 * ((100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal});
   }
 
   .col-1-of-4 {
-    width: calc((100% - 3 * #{$gutter-horizontal}) / 4); /*calcola in automatico la larghezza in modo da essere responsivo*/
+      width: calc((100% - 3 * #{$gutter-horizontal}) / 4);
   }
+
+  .col-2-of-4 {
+      width: calc(2 * ((100% - 3 * #{$gutter-horizontal}) / 4) + #{$gutter-horizontal});
+  }
+
+  .col-3-of-4 {
+      width: calc(3 * ((100% - 3 * #{$gutter-horizontal}) / 4) + 2 * #{$gutter-horizontal});
+  }
+
 }
