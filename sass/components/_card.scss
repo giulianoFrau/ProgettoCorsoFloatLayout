@@ -1,17 +1,18 @@
+/*funzionalità*/
+
 .card {
   perspective: 150rem; //prospettiva con alto numero di px
   -moz-perspective: 150rem; //questo serve per far funzionare bene la prospettiva su mozilla
   position: relative; //padre
-  height: 50rem; //per non perdere la prospettiva l'altezza va dichiarata anche qui nel padre
+  height: 52rem; //per non perdere la prospettiva l'altezza va dichiarata anche qui nel padre
   &__side {
-    color: #fff;
-    font-size: 2rem;
-    height: 50rem;
+    height: 52rem;
     transition: all.8s ease;
     position: absolute; //per sovrapporre le card usare regole da riga 11 a riga 15
     top: 0;
     left: 0;
     width: 100%;
+    overflow: hidden;
     backface-visibility: hidden;
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
@@ -33,10 +34,77 @@
   }
 
   &:hover &__side--front {
-    transform: rotateY(180deg);
+    transform: rotateY(-180deg);
   }
 
   &:hover &__side--back {
     transform: rotateY(0);
+  }
+
+  /*stile carta frontale*/
+  &__picture {
+    background-size: cover; //le stiamo definendo nel padre e non all'interno dei vari &--1 in modo da rimanere universale per tutte le immagini
+    height: 23rem;
+    background-blend-mode: screen; // permette di combinare il gradiente sotto con le immagini,un po come fatto nello sfondo dell header (immagine di background+colore in trasparenza, provato)
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        ),
+        url(../img/nat-5.jpg);
+    }
+    &--2 {
+      background-image: url(../img/nat-5.img);
+    }
+    &--3 {
+      background-image: url(../img/nat-5.img);
+    }
+  }
+  &__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: $color-white;
+    text-align: right;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%;
+  }
+
+  &__heading-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone; // questo serve per far si che il titolo risulti allineato (prova a disattivare e vedi l'effetto)
+    box-decoration-break: clone;
+    &--1 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, 0.85),
+        rgba($color-secondary-dark, 0.85)
+      );
+    }
+  }
+
+  &__details {
+    padding: 3rem;
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto; //centrare l'ul al centro del contenitore
+
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding:1rem;
+       
+
+        &:not(:last-child){ // mette la linea di separazione e da uno spazio tra tutti i list item tranne che per l'ultimo 
+          border-bottom: 1px solid $color-grey-light-2;
+        }
+      }
+    }
   }
 }
