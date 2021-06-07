@@ -46,24 +46,24 @@
     transform: translateY(-4rem);
   }
 
-  &__radio-group{
+  &__radio-group{  //contenitore radio group e disposizione
     width: 49%;
     display: inline-block;
   }
 
 
-  &__radio-input{
+  &__radio-input{ //nascondiamo i radio button originali
     display: none;
   }
   
-  &__radio-label{
+  &__radio-label{  //label radio button
     font-size: $default-font-size;
     cursor: pointer; //cambia la freccia del mouse con la manina
     position: relative;
     padding-left: 5rem;
   }
 
-  &__radio-button{
+  &__radio-button{ //pulsanti radiobutton costruiti da noi
     height: 3rem;
     width: 3rem;
     border: 5px solid $color-primary;
@@ -73,7 +73,7 @@
     left:0;
     top:0;
 
-    &::after{
+    &::after{ //effetti quando viene premuto e posizione
       content: "";
       display:block;
       height: 1.3rem;
