@@ -1,20 +1,20 @@
-.footer {
+.footer {  //struttura generale box footer
   background-color: $color-grey-dark-3;
   padding: 10rem 0;
   font-size: 1.4rem;
   color:$color-grey-light-1;
 
-  &__logo-box {
+  &__logo-box { // box immagine
       text-align: center;   
       margin-bottom: 8rem;
   }
 
-  &__logo {
+  &__logo {  //dimensioni immagine
     width: 15rem;
     height: auto;
   }
 
-  &__navigation {
+  &__navigation { // linea sopra la list item
       border-top: 1px solid $color-grey-dark;
       padding-top: 2rem;
       display: inline-block;
@@ -24,7 +24,7 @@
     list-style: none;
 }
 
-  &__item {
+  &__item {  //disposizione list item
   
     display: inline-block;
 
@@ -33,7 +33,7 @@
     }
   }
 
-  &__link {
+  &__link { //effetti list item(sono link (a))
       &:link,
       &:visited{
           color:$color-grey-light-1;
@@ -43,7 +43,7 @@
           display: inline-block;
           transition: all .2s;
       }
-      &:hover,
+      &:hover, 
       &active{
           color:$color-primary;
           box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
@@ -51,7 +51,7 @@
       }
   }
 
-  &__copyright{
+  &__copyright{ //parte relativa al paragrafo
     border-top: 1px solid $color-grey-dark;
     padding-top: 2rem;
     width: 80%;
