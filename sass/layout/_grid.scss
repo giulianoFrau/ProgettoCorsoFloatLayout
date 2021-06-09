@@ -6,15 +6,24 @@
   &:not(:last-child) {
     //diamo queste regole a tutti gli elementi tranne che all'ultimo
       margin-bottom: $gutter-vertical;
+      @include respond(tab-port) {
+        margin-bottom: $gutter-vertical-small; 
+       }  
   }
-  
+ 
   @include clearfix;
 
   [class^="col-"] { // ^ -> significa: prendi tutte le classi che iniziano con "col-"
       float: left; //consigliabile farle partire sempre da sinistra
 
       &:not(:last-child) {
-          margin-right: $gutter-horizontal;//con questa tecnica si permette di dare uno spazio tra una colonna e l'altra
+          margin-right: $gutter-horizontal;//con questa tecnica si permette di dare uno spazio tra una colonna e l'altra   
+          @include respond(tab-port) {
+            margin-right: 0; 
+          }
+      }
+      @include respond(tab-port) {
+        width:100% !important; //colonne responsive ,si fa cosi per best practice ,lo mettiamo qui cosi viene adattato per tutte le colonne
       }
   }
 
