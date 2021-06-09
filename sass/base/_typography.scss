@@ -23,7 +23,7 @@ body{
       display: block;
       font-size: 6rem; 
       font-weight: 400;
-      letter-spacing: 1rem;
+      letter-spacing: 3.5rem;
       animation-name: moveInLeft; /* elenco proprieta animazioni 1 a 1 da qui in giu*/
       animation-duration: 1s;
       animation-timing-function: ease-out;
@@ -34,7 +34,7 @@ body{
       display: block;
       font-size: 2rem;
       font-weight: 700;
-      letter-spacing: 0.75rem;
+      letter-spacing: 1.75rem;
       animation: moveInRight 1s; /* modalita abbreviata per scrivere il tempo e il nome dell animazione e altre proprietà*/
     }
   }
