@@ -1,0 +1,76 @@
+.popup {
+  //contenitore generale
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($color-black, 0.7);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+
+  &:target {
+    /* utilizzo ancoraggio e target nell html. nel div class popup dichiaro un id(es popup).Nei pulsanti che voglio che facciano vedere questo menu nascosto nell href metto
+quell id preceduto da #,quindi #popup..dopo di che imposto nel contenitore generale riga 9 e 10 e poi uso questa sub classe che esegue le istruzioni 15 e 16*/
+    opacity: 1;
+    visibility: visible;
+  }
+
+
+
+  &__content {
+    //contenitore centrato generale
+    @include absCenter;
+    width: 75%;
+    background-color: $color-white;
+    box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
+    display: table; //usiamo questo in modo da far sembrare il contenuto come una tabella
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  &__left {
+    width: 33.333333%;
+
+    display: table-cell; //colonna
+  }
+
+  &__right {
+    width: 66.666667%;
+    display: table-cell; //colonna
+    vertical-align: middle; //mettere contenuto al centro ,solo con il display table
+    padding: 3rem 5rem;
+  }
+
+  &__img {
+    display: block; //le manda a capo
+    width: 100%; // prende il 100% del suo contenitore (left)
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+    column-count: 2; // suddivide il testo in 2 colonne
+    column-gap: 4rem; //distanza tra le 2 colonne
+    column-rule: 1px solid $color-grey-light-2; // crea una linea divisoria tra le 2 colonne
+    hyphens: auto; //mette automaticamente i trattini quando una parola viene spezzata per andare a capo
+  }
+
+  &__close { //tasto chiusura popup
+    &:link,
+    &:visited{
+      color: $color-grey-dark;
+      position: absolute;
+      top:2.5rem;
+      right: 2.5rem;
+      font-size: 3rem;
+      text-decoration: none;
+      display: inline-block;
+      line-height: 1;
+    }
+    &:hover{
+      color:$color-primary;
+    }
+  }
+}
