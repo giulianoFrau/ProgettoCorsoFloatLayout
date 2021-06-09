@@ -1,5 +1,21 @@
 @charset "UTF-8";
 /* IMPORT*/
+/*
+
+0-600px TELEFONI
+600-900px TABLET DA DISEGNO
+900-1200px TABLET
+1200- 1800px  PC DESKTOP
+1800-inf px PC DESKTOP grandi 
+
+$breakpoint argument:
+-phone
+-tab-port
+-tab-land
+-big-desktop
+
+1em=16px (px/16) es 600px/16=37.5em
+*/
 /* VARIABILI */
 /* animazioni,la translate al punto 0 è x che va da sx a dx (x quello negativo)*/
 @keyframes moveInLeft {
@@ -45,7 +61,20 @@
 /*root impostato a 10 px in modo che possiamo convertire tutte le unità di misura in rem : 1rem=10px*/
 html {
   font-size: 62.5%;
-  /*equivale a 10 px,in quanto di default il font è 16px,percio'faccio x(nel mio caso 10)/16*100 */ }
+  /*equivale a 10 px,in quanto di default il font è 16px,percio'faccio x(nel mio caso 10)/16*100 */
+  /* @include respond(phone) {
+    font-size: 50%; // questo è il contenuto di content che si trova nel mixin della media query
+  } QUESTO NON E' NECESSARIO IN QUANTO UN FONT SIZE AL 50% E' GIA PRESENTE CON IL TAB-PORT */
+  /* gli include vanno ordinati dal piu grande al piu piccolo (eccetto quello del big-desktop)*/ }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.26em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 /*carattere generale */
 body {

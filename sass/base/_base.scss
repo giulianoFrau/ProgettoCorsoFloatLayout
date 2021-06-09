@@ -1,20 +1,36 @@
 /* questa parte è detta global reset ,selettore universale per adattare a ogni pagina web,aggiungiamo anche gli pseudo elementi per best-practice,
    in modo che il comportamento che hanno gli elementi reali lo abbiano anche gli pseudo elementi */
-   *,
-   *::after,
-   *::before {
-     margin: 0;  
-     padding: 0;
-     box-sizing: inherit; /*ereditarieta, best practice metterlo qui e nel body mettere il border box*/
-   }
-   
-   /*root impostato a 10 px in modo che possiamo convertire tutte le unità di misura in rem : 1rem=10px*/
-   html {
-     font-size: 62.5%; /*equivale a 10 px,in quanto di default il font è 16px,percio'faccio x(nel mio caso 10)/16*100 */
-   }
-     
-   /*carattere generale */  
-   body {
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; /*ereditarieta, best practice metterlo qui e nel body mettere il border box*/
+}
+
+/*root impostato a 10 px in modo che possiamo convertire tutte le unità di misura in rem : 1rem=10px*/
+html {
+  font-size: 62.5%; /*equivale a 10 px,in quanto di default il font è 16px,percio'faccio x(nel mio caso 10)/16*100 */
+
+  /* @include respond(phone) {
+    font-size: 50%; // questo è il contenuto di content che si trova nel mixin della media query
+  } QUESTO NON E' NECESSARIO IN QUANTO UN FONT SIZE AL 50% E' GIA PRESENTE CON IL TAB-PORT */
   
-     box-sizing: border-box;
-   }   
+  /* gli include vanno ordinati dal piu grande al piu piccolo (eccetto quello del big-desktop)*/
+  @include respond(tab-land) {
+    font-size: 56.25%; // width <= 1200?? questo è il contenuto di content che si trova nel mixin della media query(56.25% xk voglio che 1 rem sia 9px percio faccio [9/16]*100) 
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%; // width <= 900?? questo è il contenuto di content che si trova nel mixin della media query(50% xk voglio che 1 rem sia 8px percio faccio [8/16]*100)
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; // questo è il contenuto di content che si trova nel mixin della media query(75% xk voglio che 1 rem sia 12px percio faccio [12/16]*100)
+  }
+}
+
+/*carattere generale */
+body {
+  box-sizing: border-box;
+}
