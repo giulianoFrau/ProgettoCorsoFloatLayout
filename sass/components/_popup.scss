@@ -10,6 +10,7 @@
   opacity: 0;
   visibility: hidden;
 
+
   &:target {
     /* utilizzo ancoraggio e target nell html. nel div class popup dichiaro un id(es popup).Nei pulsanti che voglio che facciano vedere questo menu nascosto nell href metto
 quell id preceduto da #,quindi #popup..dopo di che imposto nel contenitore generale riga 9 e 10 e poi uso questa sub classe che esegue le istruzioni 15 e 16*/
@@ -28,6 +29,7 @@ quell id preceduto da #,quindi #popup..dopo di che imposto nel contenitore gener
     display: table; //usiamo questo in modo da far sembrare il contenuto come una tabella
     border-radius: 3px;
     overflow: hidden;
+ 
   }
 
   &__left {
