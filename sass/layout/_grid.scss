@@ -10,6 +10,11 @@
         margin-bottom: $gutter-vertical-small; 
        }  
   }
+
+  @include respond(tab-port) {
+    max-width: 50rem; //la riga occupa 50 rem anziche 114
+    padding:0 3rem;
+  }
  
   @include clearfix;
 
@@ -20,6 +25,7 @@
           margin-right: $gutter-horizontal;//con questa tecnica si permette di dare uno spazio tra una colonna e l'altra   
           @include respond(tab-port) {
             margin-right: 0; 
+            margin-bottom: $gutter-vertical-small; 
           }
       }
       @include respond(tab-port) {

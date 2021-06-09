@@ -16,6 +16,15 @@
     box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
     cursor: pointer;
     text-align: center;
+
+    @include respond(tab-port) {
+    top: 4rem;
+    right: 4rem;
+    }
+    @include respond(phone) {
+      top: 3rem;
+      right: 3rem;
+      }
   }
   &__background {
     //impostazioni di background  sfondo verde
@@ -31,7 +40,14 @@
     ); //radial xk è tondo
     z-index: 1000;    //  transform: scale(80);
     transition: transform .8s cubic-bezier(0.86,0,0.07,1);// questa animazione serve per quando si clicca il menu e poi si riclicca per farlo scomparire
-
+    @include respond(tab-port) {
+      top: 4.5rem;
+      right: 4.5rem;
+      }
+      @include respond(phone) {
+        top: 3.5rem;
+        right: 3.5rem;
+        }
 
   }
 
