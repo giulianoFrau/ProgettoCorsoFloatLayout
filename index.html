@@ -94,21 +94,35 @@
           </div>
           <div class="col-1-of-2">
             <div class="composition">
+
+<!-- density e resolution switching-->
               <img
-                src="img/nat-1-large.jpg"
-                alt="Photo 1"
+                srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                sizes="(max-width:900px) 20vw , (max-width:600px) 30vw
+              ,300px "
+                alt="photo1"
                 class="composition__photo composition__photo--p1"
-              />
+              /><!-- 20= 170(largh img)/900px(max-width)-->
               <img
-                src="img/nat-2-large.jpg"
-                alt="Photo 2"
+                srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                sizes="(max-width:900px) 20vw , (max-width:600px) 30vw
+              ,300px "
+                alt="photo2"
                 class="composition__photo composition__photo--p2"
-              />
+              /><!-- 20= 170(largh img)/900px(max-width)-->
               <img
-                src="img/nat-3-large.jpg"
-                alt="Photo 3"
+                srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                sizes="(max-width:900px) 20vw , (max-width:600px) 30vw
+              ,300px "
+                alt="photo3"
                 class="composition__photo composition__photo--p3"
-              />
+              /><!-- 20= 170(largh img)/900px(max-width)-->
+             
+             
+              <!--
+              <img src="img/nat-1-large.jpg" alt="Photo 1" class="composition__photo composition__photo--p1" />
+              <img src="img/nat-2-large.jpg" alt="Photo 2" class="composition__photo composition__photo--p2" />
+              <img src="img/nat-3-large.jpg" alt="Photo 3" class="composition__photo composition__photo--p3" /> -->
             </div>
           </div>
         </div>
@@ -407,8 +421,31 @@
 
     <footer class="footer">
       <div class="footer__logo-box">
-        <img src="img/logo-green-2x.png" class="footer__logo" alt="full logo" />
+        <!-- DIREZIONE ARTISTICA -->
+        <picture>
+          <source
+            srcset="
+              img/logo-green-small-1x.png 1x
+            "
+            media="(max-width:37.5rem)"
+          />
+          <!--al di sotto di 37.5rem usa queste img a seconda della risoluz-->
+          <img
+            srcset="img/logo-green-1x.png 1x"
+            class="footer__logo"
+            alt="full logo"
+          />
+          <!-- al di sopra usa queste img a seconda della risoluz -->
+        </picture>
       </div>
+      <!--   <div class="footer__logo-box">
+       
+     
+
+        <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" class="footer__logo" alt="full logo" />
+       con src set carico la stessa img con risoluzione differente
+        e sarà il browser a scegliere la migliore a seconda della risoluzione dello schermo ciò è chiamato anche CAMBIO DI DENSITA'
+      </div> -->
       <div class="row">
         <div class="col-1-of-2">
           <div class="footer__navigation">
@@ -453,7 +490,9 @@
         </div>
         <div class="popup__right">
           <a href="#section-tours" class="popup__close">&times;</a>
-          <h2 class="heading-secondary u-margin-bottom-medium">Start Booking now</h2>
+          <h2 class="heading-secondary u-margin-bottom-medium">
+            Start Booking now
+          </h2>
           <h3 class="heading-tertiary u-margin-bottom-small">
             Important &ndash; Please read this terms before booking
           </h3>
@@ -461,20 +500,19 @@
             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
             Accusantium animi quam velit facere adipisci distinctio quasi in
             fugiat officia nostrum quod consequuntur, dolore est accusamus
-            corporis veritatis amet! Nihil, blanditiis?
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Accusantium animi quam velit facere adipisci distinctio quasi in
-            fugiat officia nostrum quod consequuntur, dolore est accusamus
-            corporis veritatis amet! Nihil, blanditiis?
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Accusantium animi quam velit facere adipisci distinctio quasi in
-            fugiat officia nostrum quod consequuntur, dolore est accusamus
-            corporis veritatis amet! Nihil, blanditiis?
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Accusantium animi quam velit facere adipisci distinctio quasi in
-            fugiat officia nostrum quod consequuntur, dolore est accusamus
-            corporis veritatis amet! Nihil, blanditiis?dolore est accusamus
-            corporis veritatis amet! Nihil, blanditiis  sit, amet consectetur  sit, amet consectetur onsectetur
+            corporis veritatis amet! Nihil, blanditiis? Lorem ipsum dolor sit,
+            amet consectetur adipisicing elit. Accusantium animi quam velit
+            facere adipisci distinctio quasi in fugiat officia nostrum quod
+            consequuntur, dolore est accusamus corporis veritatis amet! Nihil,
+            blanditiis? Lorem ipsum dolor sit, amet consectetur adipisicing
+            elit. Accusantium animi quam velit facere adipisci distinctio quasi
+            in fugiat officia nostrum quod consequuntur, dolore est accusamus
+            corporis veritatis amet! Nihil, blanditiis? Lorem ipsum dolor sit,
+            amet consectetur adipisicing elit. Accusantium animi quam velit
+            facere adipisci distinctio quasi in fugiat officia nostrum quod
+            consequuntur, dolore est accusamus corporis veritatis amet! Nihil,
+            blanditiis?dolore est accusamus corporis veritatis amet! Nihil,
+            blanditiis sit, amet consectetur sit, amet consectetur onsectetur
           </p>
           <a href="#" class="btn btn--green">Book now</a>
         </div>

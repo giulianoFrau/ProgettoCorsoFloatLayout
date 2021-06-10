@@ -8,12 +8,22 @@ siccome fanno parte del "blocco" header gli elementi posso annidarli nel seguent
       rgba($color-primary-light, 0.8),
       rgba($color-primary-dark, 0.8)
     ),
-    url(../img/hero.jpg);
+    url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); //webkit serve per avere la compatibilità in tutti i browser
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); //espresso in vh in quanto anche l'altezza è epressa nello stesso formato
   position: relative;
+
+
+  @media(min-resolution:192dpi) and (min-width:600px){
+    background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/hero.jpg);
+  }
 
   @include respond(phone) {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); //webkit serve per avere la compatibilità in tutti i browser
