@@ -176,7 +176,9 @@
     font-weight: 100;
   }
 }
-  @include respond(tab-port) {
+  
+    @media only screen and (max-width:56.25rem), //qui mettiamo la query originale e non il mixin per poter integrare che se il dispositivo non ha mouse,e quindi un dispositivo toush la carta retro sara visibile
+    only screen and(hover:none){
     .card {
       // 3 CARDS ANIMATE fronte/retro
 

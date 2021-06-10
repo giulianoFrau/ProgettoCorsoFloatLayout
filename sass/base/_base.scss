@@ -28,7 +28,7 @@ html {
   @include respond(big-desktop) {
     font-size: 75%; // questo è il contenuto di content che si trova nel mixin della media query(75% xk voglio che 1 rem sia 12px percio faccio [12/16]*100)
   }
-}
+} 
 
 /*carattere generale */
 body {
@@ -37,4 +37,10 @@ body {
   @include respond(tab-port) {
     padding: 0; //sotto i 900 ci sbarazziamo del bordo bianco
   }
+}
+
+
+::selection{
+  background-color: $color-primary;
+  color:$color-white;
 }

@@ -8,7 +8,7 @@ siccome fanno parte del "blocco" header gli elementi posso annidarli nel seguent
       rgba($color-primary-light, 0.8),
       rgba($color-primary-dark, 0.8)
     ),
-    url(../img/hero-small.jpg);
+    url(../img/hero-small.jpg); 
   background-size: cover;
   background-position: top;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); //webkit serve per avere la compatibilità in tutti i browser
@@ -16,7 +16,7 @@ siccome fanno parte del "blocco" header gli elementi posso annidarli nel seguent
   position: relative;
 
 
-  @media(min-resolution:192dpi) and (min-width:600px){
+  @media only screen and (min-resolution:192dpi) and (min-width:600px){
     background-image: linear-gradient(
       to right bottom,
       rgba($color-primary-light, 0.8),
