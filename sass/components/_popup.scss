@@ -29,7 +29,7 @@ quell id preceduto da #,quindi #popup..dopo di che imposto nel contenitore gener
     display: table; //usiamo questo in modo da far sembrare il contenuto come una tabella
     border-radius: 3px;
     overflow: hidden;
- 
+  
   }
 
   &__left {
@@ -48,6 +48,7 @@ quell id preceduto da #,quindi #popup..dopo di che imposto nel contenitore gener
   &__img {
     display: block; //le manda a capo
     width: 100%; // prende il 100% del suo contenitore (left)
+    
   }
 
   &__text {
@@ -57,6 +58,11 @@ quell id preceduto da #,quindi #popup..dopo di che imposto nel contenitore gener
     column-gap: 4rem; //distanza tra le 2 colonne
     column-rule: 1px solid $color-grey-light-2; // crea una linea divisoria tra le 2 colonne
     hyphens: auto; //mette automaticamente i trattini quando una parola viene spezzata per andare a capo
+
+    @include respond(phone){
+      column-count: 10; // suddivide il testo in 2 colonne
+    column-gap: 1rem; //distanza tra le 2 colonne
+     }
   }
 
   &__close { //tasto chiusura popup

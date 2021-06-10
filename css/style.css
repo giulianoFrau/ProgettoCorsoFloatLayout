@@ -614,6 +614,10 @@ quell id preceduto da #,quindi #popup..dopo di che imposto nel contenitore gener
     column-gap: 4rem;
     column-rule: 1px solid #eee;
     hyphens: auto; }
+    @media (max-width: 37.5em) {
+      .popup__text {
+        column-count: 10;
+        column-gap: 1rem; } }
   .popup__close:link, .popup__close:visited {
     color: #777;
     position: absolute;
